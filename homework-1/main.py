@@ -24,7 +24,6 @@ with psycopg2.connect(
     password="Xena2003"
 ) as conn:
     with conn.cursor() as cur:
-        '''
         for i in data_customers:
             sql_request = f"INSERT INTO customers VALUES ('%s', '%s', '%s')" % (i[0].replace("'", "''"),
                                                                                 i[1].replace("'", "''"),
@@ -39,5 +38,4 @@ with psycopg2.connect(
         for i in data_orders:
             j = tuple(i)
             cur.execute(f"INSERT INTO orders VALUES {j}")
-        '''
 conn.close()
