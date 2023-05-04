@@ -27,6 +27,13 @@ order by products.units_in_stock
 
 -- 3. Список компаний заказчиков (company_name из табл customers), не сделавших ни одного заказа
 
+select distinct company_name from customers c
+left join orders o on c.customer_id = o.customer_id
+where o.customer_id is NULL
 
 -- 4. уникальные названия продуктов, которых заказано ровно 10 единиц (количество заказанных единиц см в колонке quantity табл order_details)
 -- Этот запрос написать именно с использованием подзапроса.
+
+select distinct product_name from (select product_name, quantity from products
+									join order_details USING (product_id)) AS a
+									where a.quantity = 10
