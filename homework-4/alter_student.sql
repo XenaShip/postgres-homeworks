@@ -3,13 +3,13 @@ CREATE TABLE student
 (
 	student_id serial,
 	first_name varchar(50),
-	last_name varchar,
+	last_name varchar(50),
   birthday date,
-  phone varchar
+  phone varchar(50)
 );
 
 -- 2. Добавить в таблицу student колонку middle_name varchar
-ALTER TABLE student ADD COLUMN middle_name varchar;
+ALTER TABLE student ADD COLUMN middle_name varchar(50);
 
 -- 3. Удалить колонку middle_name
 ALTER TABLE student DROP COLUMN middle_name;
