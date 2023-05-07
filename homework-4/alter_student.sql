@@ -4,8 +4,8 @@ CREATE TABLE student
 	student_id serial,
 	first_name varchar(50),
 	last_name varchar(50),
-  birthday date,
-  phone varchar(50)
+  	birthday date,
+  	phone varchar(50)
 );
 
 -- 2. Добавить в таблицу student колонку middle_name varchar
